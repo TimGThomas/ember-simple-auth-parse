@@ -14,10 +14,10 @@ export default {
           return null;
         } else {
           var store = container.lookup('store:main');
-          var model = store.modelFor('parseUser');
+          var model = store.modelFor('parse-user');
           var serializer = store.serializerFor(model);
           serializer.normalize(model, userData);
-          var record = store.push(model, userData);
+          var record = store.push('parse-user', userData);
           return record;
         }
       }.property('secure.userData')
